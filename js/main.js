@@ -41,31 +41,34 @@ function myFunction(){
         return out  ;
     }
     function croissants () {
-        var series = 0 ;
-        var maxSeries = 0 ;
+        var series = 0;
+        var another =0;
+        document.getElementById("seriresArray").innerHTML = series;
         if( arr.length > 1 ){
             for ( var i = 0 ; i <arr.length ; i++ ){
                 if (arr[i+1]>arr[i] ){
-                    
                     series=series+1;
-                    document.getElementById("seriresArray").innerHTML = maxSeries; 
-                    maxSeries = series ;
+                    another=series+1
+                    console.log(series);
+                    console.log(another);
                     
+                    document.getElementById("seriresArray").innerHTML =another ; 
+   
                     
                 }
                 else {
                     
                     
-                    document.getElementById("seriresArray").innerHTML = maxSeries;
+                    document.getElementById("seriresArray").innerHTML = another;
                     break;
 
                 }
+               
             }
         
 
         }
-        document.getElementById("seriresArray").innerHTML = maxSeries;
-        return maxSeries ;
+      
     }
 
         
