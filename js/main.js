@@ -42,22 +42,30 @@ function myFunction(){
     }
     function croissants () {
         var series = 0 ;
+        var maxSeries = 0 ;
         if( arr.length > 1 ){
             for ( var i = 0 ; i <arr.length ; i++ ){
                 if (arr[i+1]>arr[i] ){
                     
                     series=series+1;
-                    document.getElementById("seriresArray").innerHTML = series; 
+                    document.getElementById("seriresArray").innerHTML = maxSeries; 
+                    maxSeries = series ;
+                    
+                    
                 }
                 else {
-                    document.getElementById("seriresArray").innerHTML = series;
+                    
+                    
+                    document.getElementById("seriresArray").innerHTML = maxSeries;
+                    break;
 
                 }
             }
         
 
         }
-        document.getElementById("seriresArray").innerHTML = series;
+        document.getElementById("seriresArray").innerHTML = maxSeries;
+        return maxSeries ;
     }
 
         
