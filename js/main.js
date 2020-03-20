@@ -4,12 +4,13 @@ var total = 0 ;
 var arr = [] ; 
 sum = 0;
 average = 0;
+var maxArray = [];
+
 
 function both(){
     myFunction();
     sumArray();
     croissants();
-    
 };
 
 function myFunction(){
@@ -43,36 +44,33 @@ function myFunction(){
     function croissants () {
         var series = 0;
         var another =0;
+        var maxSerires=0;
         document.getElementById("seriresArray").innerHTML = series;
         if( arr.length > 1 ){
-            for ( var i = 0 ; i <arr.length ; i++ ){
-                if (arr[i+1]>arr[i] ){
+            for ( var i = 0 ; i < arr.length ; i++ ){
+                if (arr[i+1] > arr[i] ) {
                     series=series+1;
-                    another=series+1
-                    console.log(series);
-                    console.log(another);
+                    another=series+1;
+                    maxSerires=another;
                     
-                    document.getElementById("seriresArray").innerHTML =another ; 
-   
-                    
+
                 }
                 else {
-                    
-                    
-                    document.getElementById("seriresArray").innerHTML = another;
-                    break;
-
-                }
-               
+                    series=0;
+                    document.getElementById("seriresArray").innerHTML = maxSerires;   
+                }    
             }
-        
-
         }
-      
-    }
+        maxArray.push(maxSerires);
+        console.log(Math.max(...maxArray));
 
-        
-        
+        document.getElementById("seriresArray").innerHTML =Math.max(...maxArray) ; 
+        return maxSerires ; 
+    }
+function resetAll() {
+    location.reload(true);
+} 
 ;
+
 
 
