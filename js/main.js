@@ -62,8 +62,6 @@ function myFunction(){
             }
         }
         maxArray.push(maxSerires);
-        console.log(Math.max(...maxArray));
-
         document.getElementById("seriresArray").innerHTML =Math.max(...maxArray) ; 
         return maxSerires ; 
     }
