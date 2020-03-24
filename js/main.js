@@ -66,7 +66,7 @@ function myFunction(){
         return maxSerires ; 
     }
 function resetAll() {
-    location.reload(true);
+    Array.from(document.querySelectorAll(".une_class")).forEach((x) => x.innerHTML = '0');
 } 
 ;
 
