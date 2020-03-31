@@ -1,10 +1,10 @@
-var maxNumber = 0 ; 
-var minNumber = 1000 ; 
-var total = 0 ; 
-var arr = [] ; 
-sum = 0;
-average = 0;
-var maxArray = [];
+let maxNumber = 0 ; 
+let minNumber = 1000 ; 
+let total = 0 ; 
+let arr = [] ; 
+let sum = 0;
+let average = 0;
+let maxArray = [];
 
 
 function both(){
@@ -14,8 +14,8 @@ function both(){
 };
 
 function myFunction(){
-    var nombre = Number(document.getElementById("nombreEntrés").value);
-    if (Number.isInteger(nombre)== true){
+    let nombre = Number(document.getElementById("nombreEntrés").value);
+    if (Number.isInteger(nombre)=== true){
     
     arr.push(nombre);
         document.getElementById("numbers").innerHTML = arr; 
@@ -31,8 +31,8 @@ function myFunction(){
     }
         }
         function sumArray(){
-            var out = 0;
-        for (var i =0 ; i < arr.length ; i++){
+            let out = 0;
+        for (let i =0 ; i < arr.length ; i++){
 
             out += this.arr[i];
             average = out / arr.length 
@@ -41,18 +41,18 @@ function myFunction(){
         }
         return out  ;
     }
-    function croissants () {
-        var series = 0;
-        var another =0;
-        var maxSerires=0;
-        document.getElementById("seriresArray").innerHTML = series;
-        if( arr.length > 1 ){
-            for ( var i = 0 ; i < arr.length ; i++ ){
-                if (arr[i+1] > arr[i] ) {
-                    series=series+1;
-                    another=series+1;
-                    maxSerires=another;
-                    
+        function croissants () {
+            let series = 0;
+            let another =0;
+            let maxSerires=0;
+            document.getElementById("seriresArray").innerHTML = series;
+            if( arr.length > 1 ){
+                for ( let i = 0 ; i < arr.length ; i++ ){
+                    if (arr[i+1] > arr[i] ) {
+                        series=series+1;
+                        another=series+1;
+                        maxSerires=another;
+                        
 
                 }
                 else {
@@ -66,9 +66,16 @@ function myFunction(){
         return maxSerires ; 
     }
 function resetAll() {
-    Array.from(document.querySelectorAll(".une_class")).forEach((x) => x.innerHTML = '0');
-} 
-;
+    document.querySelectorAll(".une_class").forEach((x) => {
+        if (x.value) {
+        x.value="0";
+        } else {
+        x.innerHTML = '0';
+        }
+
+    }
 
 
 
+
+    )}
